@@ -19,13 +19,23 @@ const material = new THREE.MeshBasicMaterial({
 const sphere = new THREE.Mesh(geometry, material);
 scene.add(sphere);
 
-camera.position.z = 5;
+camera.position.z = 4;
+
+let mouseX, mouseY;
+$(document).mousemove(function (e) {
+    mouseX = e.pageX;
+    mouseY = e.pageY;
+
+    camera.position.z = 4.5 - ((mouseX - (mouseY * 2)) / 3000);
+    //camera.position.z = 5 - (mouseY / 1000);
+}).mouseover();
+
 
 const animate = function () {
     requestAnimationFrame(animate);
 
-    sphere.rotation.x += 0.01;
-    sphere.rotation.y += 0.01;
+    sphere.rotation.x += 0.003;
+    sphere.rotation.y += 0.003;
 
     renderer.render(scene, camera);
 };
