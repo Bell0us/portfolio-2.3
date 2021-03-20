@@ -27,7 +27,6 @@ $(document).mousemove(function (e) {
     mouseY = e.pageY;
 
     camera.position.z = 4.5 - ((mouseX - (mouseY * 2)) / 3000);
-    //camera.position.z = 5 - (mouseY / 1000);
 }).mouseover();
 
 

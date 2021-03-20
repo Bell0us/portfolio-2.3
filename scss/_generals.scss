@@ -21,6 +21,11 @@ body {
     padding: 2rem 8rem;
 }
 
+.container {
+    max-width: 1500px;
+    margin: 0 auto;
+}
+
 canvas {
     position: absolute;
     left: 0;
@@ -37,10 +42,47 @@ a {
     text-decoration: none;
 }
 
-.heading {
+.heading, .sub-heading {
     font-weight: $regular;
 
     span {
         color: $highlight-color;
     }
+}
+
+.sub-heading {
+    font-size: clamp(em(25), 4vw, em(60));
+
+    position: relative;
+}
+
+.white-line {
+    align-self: center;
+    justify-self: stretch;
+
+    height: 4px;
+    background-color: white;
+}
+
+.desc {
+    max-width: 780px;
+}
+
+.desc-title {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.title-heading {
+    font-weight: $regular;
+    font-size: clamp(em(18), 3vw, em(50));
+}
+
+.desc-text {
+    font-weight: $ex-light;
+    font-size: clamp(em(14), 1.5vw, em(35));
+
+    color: $sub-font-color;
 }
