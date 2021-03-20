@@ -1,0 +1,75 @@
+#home {
+    min-height: 80vh;
+
+    display: grid;
+    grid-template-columns: 4fr 1fr;
+    grid-template-rows: repeat(2, 1fr);
+    grid-template-areas: 
+        "h-heading h-heading"
+        "h-intro h-scroll"
+    ;
+}
+
+.home-heading {
+    grid-area: h-heading;
+
+    font-size: clamp(em(30), 6vw, em(90));
+    line-height: 1.1;
+
+    align-self: center;
+
+    margin-bottom: em(-15);
+}
+
+.introduction {
+    grid-area: h-intro;
+
+    //margin-top: 15rem;
+
+    align-self: end;
+}
+
+.intro-title {
+    font-size: clamp(em(14), 3vw, em(40));
+    font-weight: $light;
+}
+
+.intro-desc {
+    font-size: clamp(em(10), 1.5vw, em(24));
+    font-weight: $ex-light;
+
+    color: $sub-font-color;
+
+    line-height: .7;
+}
+
+.scroll {
+    grid-area: h-scroll;
+
+    align-self: end;
+    justify-self: end;
+
+    display: flex;
+    flex-flow: column nowrap;
+    align-items: center;
+}
+
+.scroll-badge {
+    margin-bottom: 1.5rem;
+}
+
+.scroll-text {
+    width: 16px;
+    height: auto;
+}
+
+#scroll-circle {
+    animation: circleScrollAnim 1.3s infinite alternate-reverse;
+}
+
+
+@keyframes circleScrollAnim {
+    to {
+        transform: translateY(30px);
+    }
+}

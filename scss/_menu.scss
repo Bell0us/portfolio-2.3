@@ -1,0 +1,43 @@
+nav {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo-menu {
+    width: em(60);
+    height: auto;
+}
+
+.menu {
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.menu-links {
+    font-size: em(20);
+    font-weight: $ex-light;
+
+    padding: 0 em(50,20);
+
+    &:first-of-type {
+        padding-left: 0;
+    }
+    &:last-of-type {
+        padding-right: 0;
+    }
+
+    transition: font-weight 250ms ease-out;
+
+    &:hover,
+    &:focus {
+        font-weight: $medium;
+    }
+}
+
+.active-link {
+    font-weight: $medium;
+}
